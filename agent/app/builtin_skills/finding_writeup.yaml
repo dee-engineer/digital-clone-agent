@@ -1,0 +1,15 @@
+name: finding_writeup
+title: Pentest finding write-up
+description: "Turn raw testing notes into a client-ready finding: description, impact, reproduction, remediation, references."
+inputs:
+  - {name: title, label: Finding title, type: text}
+  - {name: severity, label: Severity, type: select, options: [Critical, High, Medium, Low, Info]}
+  - {name: notes, label: Raw notes / evidence, type: textarea}
+retrieve_from: [title, notes]
+prompt: |
+  Write up this penetration test finding for a client report.
+  Title: {{title}}. Severity: {{severity}}.
+  Raw notes: {{notes}}
+  Sections: Description, Affected assets, Impact (business terms), Steps to reproduce (numbered, from the notes only),
+  Remediation (specific, prioritised), References (only well-known ones such as OWASP or CWE ids you are sure of).
+  Do not invent evidence, URLs or payloads that are not in the notes.

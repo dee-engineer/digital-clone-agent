@@ -1,0 +1,14 @@
+name: meeting_brief
+title: Meeting brief
+description: "One-page prep for a call: who they are, goals, questions to ask, risks."
+inputs:
+  - {name: who, label: Person / company, type: text}
+  - {name: goal, label: Goal of the meeting, type: text}
+  - {name: context, label: What you already know, type: textarea, required: false}
+untrusted: [context]
+retrieve_from: [who, goal, context]
+prompt: |
+  Prepare a one-page brief for a meeting with {{who}}. My goal: {{goal}}.
+  What I know: {{context}}
+  Include: likely priorities of the other side, 5 sharp questions, what to offer from my notes, risks or red flags,
+  and a suggested closing ask. Be concise.

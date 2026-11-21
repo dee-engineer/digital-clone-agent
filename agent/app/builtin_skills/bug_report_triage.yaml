@@ -1,0 +1,15 @@
+name: bug_report_triage
+title: Vulnerability report triage
+description: Assess an incoming bug bounty / vulnerability report, rate severity, list what is missing, and draft the reply to the reporter.
+inputs:
+  - {name: program_scope, label: Scope / program rules, type: textarea, required: false}
+  - {name: report, label: Report text, type: textarea}
+untrusted: [report]
+retrieve_from: [program_scope, report]
+prompt: |
+  Triage this vulnerability report.
+  Program scope and rules: {{program_scope}}
+  Report: {{report}}
+  Output sections: 1) Summary in two lines. 2) In scope? 3) Likely vulnerability class and a severity estimate with
+  reasoning (state uncertainty; do not claim confirmation). 4) What is missing to reproduce. 5) Duplicate or
+  known-issue risk. 6) Recommended next action. 7) Draft reply to the reporter (polite, specific, no promises of payout).

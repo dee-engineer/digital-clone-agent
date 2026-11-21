@@ -1,0 +1,35 @@
+{
+  "name": "Clone: send approved reply",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "send-reply",
+        "authentication": "headerAuth",
+        "options": {}
+      },
+      "name": "Approved reply webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 300],
+      "webhookId": "send-reply"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "reply",
+        "messageId": "={{ $json.body.message_id }}",
+        "message": "={{ $json.body.reply }}",
+        "options": {}
+      },
+      "name": "Gmail reply",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [460, 300]
+    }
+  ],
+  "connections": {
+    "Approved reply webhook": { "main": [[{ "node": "Gmail reply", "type": "main", "index": 0 }]] }
+  },
+  "settings": {}
+}

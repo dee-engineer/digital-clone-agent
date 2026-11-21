@@ -1,0 +1,15 @@
+name: proposal
+title: Proposal / quote
+description: Turn a client brief into a scoped proposal with phases, deliverables and assumptions. Prices only if your notes contain them.
+inputs:
+  - {name: client, label: Client, type: text}
+  - {name: brief, label: What they need, type: textarea}
+  - {name: constraints, label: Budget / timeline / constraints, type: textarea, required: false}
+untrusted: [brief]
+retrieve_from: [brief]
+prompt: |
+  Draft a proposal for {{client}}.
+  Their brief: {{brief}}
+  Constraints: {{constraints}}
+  Structure: Understanding of the need, Approach, Phases and deliverables, Timeline, Assumptions and exclusions,
+  Pricing (use only prices found in my notes; otherwise write "To be confirmed"), Next steps.

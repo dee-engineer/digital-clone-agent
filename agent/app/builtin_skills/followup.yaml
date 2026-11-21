@@ -1,0 +1,14 @@
+name: followup
+title: Follow-up message
+description: Write a short follow-up after a call, quote or silence.
+inputs:
+  - {name: situation, label: What happened / where it stands, type: textarea}
+  - {name: goal, label: What you want next, type: text}
+  - {name: tone, label: Tone, type: select, options: [Friendly, Neutral, Firm]}
+untrusted: [situation]
+retrieve_from: [situation, goal]
+prompt: |
+  Write a short follow-up message. Tone: {{tone}}.
+  Situation: {{situation}}
+  What I want: {{goal}}
+  Under 120 words, one clear ask.

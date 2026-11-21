@@ -1,0 +1,11 @@
+name: social_post
+title: Social post / script
+description: Draft a short video script or post in your voice for TikTok, LinkedIn or X.
+inputs:
+  - {name: platform, label: Platform, type: select, options: [TikTok script, LinkedIn post, X thread]}
+  - {name: topic, label: Topic / angle, type: textarea}
+retrieve_from: [topic]
+prompt: |
+  Draft a {{platform}} about: {{topic}}
+  Open with a strong hook. Keep it practical and credible, no hype, no fake claims or stats. For a TikTok script give
+  spoken lines with brief on-screen text cues, 45 seconds max. For LinkedIn, 120-180 words. For X, 4-6 short posts.

@@ -1,0 +1,9 @@
+.env
+persona.md
+data/knowledge/*
+!data/knowledge/README.txt
+data/chroma/
+*.db
+__pycache__/
+.pytest_cache/
+.venv/

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digital Clone</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<header><strong>Digital Clone</strong><nav id="nav" hidden></nav><button id="logout" class="ghost" hidden>Lock</button></header>
+<main>
+  <section id="login"><h2>Unlock</h2>
+    <p>Paste the API key from your <code>.env</code> file.</p>
+    <input id="key" type="password" placeholder="API key" autocomplete="off"> <button id="go">Unlock</button></section>
+  <div id="msg" role="status"></div>
+  <section id="view"></section>
+</main>
+<script src="/static/app.js"></script>
+</body></html>

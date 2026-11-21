@@ -1,0 +1,14 @@
+name: email_reply
+title: Reply to an email
+description: Draft a reply in your voice using your notes.
+inputs:
+  - {name: sender, label: From, type: text}
+  - {name: subject, label: Subject, type: text, required: false}
+  - {name: body, label: Email, type: textarea}
+untrusted: [subject, body]
+retrieve_from: [subject, body]
+prompt: |
+  Write a reply to this email. Reply body only: no subject line, no signature block.
+  From: {{sender}}
+  {{subject}}
+  {{body}}
